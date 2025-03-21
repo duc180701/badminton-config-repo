@@ -2,7 +2,7 @@ server:
   port: 0
 spring:
   application:
-    name: global-configmanagement:
+    name: global-configmanagement
   endpoints:
     web:
       exposure:
