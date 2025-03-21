@@ -1,8 +1,23 @@
 server:
-  port: 0
+  port: 8888
+
 spring:
   application:
-    name: global-configmanagement
+    name: config-server  # Đặt lại tên cho hợp lý
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/duc180701/badminton-config-repo
+          default-label: main  # 🔹 Branch chứa file config
+          clone-on-start: true  # Clone config ngay khi khởi động
+
+  security:
+    user:
+      name: admin
+      password: admin123
+
+management:
   endpoints:
     web:
       exposure:
@@ -10,8 +25,3 @@ spring:
   endpoint:
     health:
       show-details: always
-  security:
-    user:
-      name: admin
-      password: admin123
-  
